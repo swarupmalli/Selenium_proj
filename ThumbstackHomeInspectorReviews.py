@@ -66,9 +66,9 @@ while True:
             text = review.find_element_by_xpath('//div[@class="flex w-100 m_justify-between m_flex-row flex-column _1FgKgbKOPF8cM7Sp7AHU-m"]').text
             #Username referes to the name name of the service provider
             username = review.find_element_by_xpath('//span[@class="padLeft6 NHaasDS55Rg fontSize_12 pad3 noBottomPad padTop2"]').text
-            #date_published = review.find_element_by_xpath('.//span[@class="NHaasDS55Rg fontSize_12  pad3 noBottomPad padTop2"]').text
-           #Commenting the above code to SM and reusing it
-            date_published = review.find_element_by_xpath('//span[@class="u-visuallyHidden"]/span').text
+            
+           # Using the below variable to get the nbr of reviews in numeric format
+            NbrOfReviews = review.find_element_by_xpath('//span[@class="u-visuallyHidden"]/span').text
             #rating = review.find_element_by_xpath('.//span[@class="positionAbsolute top0 left0 overflowHidden color_000"]').get_attribute('style')
             rating = review.find_element_by_xpath('//span[@class="_3gx0PQezdIxb5WhHjK1ZOE StarRating-numericRating"]').text
             #COmmenting out SM the below ,uses regular expressions
@@ -83,7 +83,7 @@ while True:
             review_dict['title'] = title
             review_dict['text'] = text
             review_dict['username'] = username
-            review_dict['date_published'] = date_published
+            review_dict['NbrOfReviews'] = NbrOfReviews
             review_dict['rating'] = rating
 
             writer.writerow(review_dict.values())
