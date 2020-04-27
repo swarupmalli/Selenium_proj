@@ -19,8 +19,8 @@ driver.get("https://www.thumbtack.com/instant-results/?zip_code=08831&keyword_pk
 # Click review button to go to the review section
 #review_button.click()
 
-#csv_file = open('reviews.csv', 'w', encoding='utf-8', newline='')
-#writer = csv.writer(csv_file)
+csv_file = open('reviews.csv', 'w', encoding='utf-8', newline='')
+writer = csv.writer(csv_file)
 # Page index used to keep track of where we are.
 index = 1
 while True:
@@ -62,14 +62,15 @@ while True:
             except:
                 pass  
 
-
-            text = review.find_element_by_xpath('.//span[@class="pad6 onlyRightPad"]').text
-            username = review.find_element_by_xpath('.//span[@class="padLeft6 NHaasDS55Rg fontSize_12 pad3 noBottomPad padTop2"]').text
+            #Here the text variable refers to the rectangular region that holds the details needed for the proj
+            text = review.find_element_by_xpath('//div[@class="flex w-100 m_justify-between m_flex-row flex-column _1FgKgbKOPF8cM7Sp7AHU-m"]').text
+            #Username referes to the name name of the service provider
+            username = review.find_element_by_xpath('//span[@class="padLeft6 NHaasDS55Rg fontSize_12 pad3 noBottomPad padTop2"]').text
             #date_published = review.find_element_by_xpath('.//span[@class="NHaasDS55Rg fontSize_12  pad3 noBottomPad padTop2"]').text
            #Commenting the above code to SM and reusing it
-            date_published = review.find_element_by_xpath('.//span[@class="u-visuallyHidden"]/span').text
+            date_published = review.find_element_by_xpath('//span[@class="u-visuallyHidden"]/span').text
             #rating = review.find_element_by_xpath('.//span[@class="positionAbsolute top0 left0 overflowHidden color_000"]').get_attribute('style')
-            rating = review.find_element_by_xpath('.//span[@class="_3gx0PQezdIxb5WhHjK1ZOE StarRating-numericRating"]').text
+            rating = review.find_element_by_xpath('//span[@class="_3gx0PQezdIxb5WhHjK1ZOE StarRating-numericRating"]').text
             #COmmenting out SM the below ,uses regular expressions
             #rating = int(re.findall('\d+', rating)[0])/20  
 
