@@ -1,12 +1,13 @@
-Requirment specification 
-webscraping tool: Selenium
-programming language:python
+Requirement specification for the project
+
+Webscraping tool: Selenium
+
+Programming language:python
 
 Objective of the project:
- 
-I'm trying to gather information on home inspectors located in my area.
-The website Thumstack hosts reviews and other relevant details on the home inspectors.I'm trying to extract information like number of reviews,the star rating ,name of the service provider etc.
-Planning to extract the data into a csv and slice and dice the information to get insight on how to evaluate a home inspector before hiring him/her.
 
- 
-
+I'm trying to webscrape information on home inspectors located in my area. The website 
+thumbtack (www.thumbtack.com) hosts reviews and other relevant details on the home inspectors.
+The datasets are number of reviews,the star rating ,name of the service provider etc. 
+After extracting the data into a csv ,I'm planning to slice and dice the information to get insight 
+on how to evaluate a home inspector before hiring they services for home inspection.
